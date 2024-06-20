@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
-// const User = require('./UserModel');
-// const validator = require('validator')
 
 const tourSchema = new mongoose.Schema({
     name: {
@@ -11,7 +9,6 @@ const tourSchema = new mongoose.Schema({
         trim: true,
         maxlength: [40, 'A tour name must have less or equal then 40 characters'],
         minlength: [10, 'A tour name must have more or equal then 10 characters']
-        // validate: [validator.isAlpha, 'Tour name must only contain characters']
     },
     slugedName: String,
     duration: {
@@ -33,8 +30,8 @@ const tourSchema = new mongoose.Schema({
     ratingsAverage: {
         type: Number,
         default: 4.5,
-        min: [1, 'Rating must be above 1.0'], // min and max works in numbers and dates,
-        max: [5, 'Rating must be below 5.0'], // in case of Strings use maxlength and maxlength
+        min: [1, 'Rating must be above 1.0'],
+        max: [5, 'Rating must be below 5.0'], 
         set: val => val.toFixed(2)
     },
     ratingsQuantity: {
@@ -105,10 +102,10 @@ const tourSchema = new mongoose.Schema({
     guides: [{
         type : mongoose.Schema.ObjectId,
         ref: 'User'
-        }] // mongoose automaticaly know which model this field reference, so no need to import User model
+        }] 
 },{
-    toJSON: { virtuals: true, getters: true }, // Include virtuals and getters in toJSON output
-    toObject: { virtuals: true, getters: true }, // Include virtuals and getters in toObject output
+    toJSON: { virtuals: true, getters: true },
+    toObject: { virtuals: true, getters: true },
 });
 
 
@@ -126,19 +123,12 @@ tourSchema.virtual('reviews', {
     localField: '_id' // for what toTour is referenced in review model
 })
 
-
-// document middleware
 tourSchema.pre('save', function(next) {
     this.slugedName = slugify(this.name, {lower: true, remove: null});
     next();
 })
 
 
-// document middleware
-// tourSchema.post('save', (doc, next) => {
-//     console.log(doc);
-//     next();
-// })
 
 
 // query middleware
@@ -152,29 +142,11 @@ tourSchema.pre(/^find/, function(next) {
 tourSchema.pre(/^find/, function(next) {
     this.populate({
         path : 'guides',
-        select: '-__v' // exclude
+        select: '-__v'
     })
 
     next();
 })
-
-
-// // aggregate middleware
-// tourSchema.pre('aggregate', function(next) {
-//     this.pipeline().unshift({$match : {secretTour : {$ne : true}}});
-//     next();
-// })
-
-
-// query middleware
-// tourSchema.post(/^find/, function(doc, next) {
-//     // don't worry by using this.start in pre and post with find event, the start var does not
-//     // be included in the response because this refer to the whole response (query, header...)
-//     // so the user will only get the query then start var will not be added to him
-//     console.log(`The request tooks: ${Date.now() - this.start}`)
-//     next();
-// })
-
 
 
 
@@ -182,32 +154,3 @@ const Tour = mongoose.model('Tour', tourSchema);
 
 module.exports = Tour;
 
-
-// if you need to embed the guides document in the tour model, use this pre save middleware
-// also the guides field should be guides : Array, so in each index of this array we store
-// the guide document from the User model
-// it's prefer to use reference, instead of embedding because, let a user data are updated
-// then we need to query in the tour model and check if this user also belong to the tour model
-// and this operation will take a time to execute
-// tourSchema.pre('save',async function(next) {
-//     const guidesPromises = this.guides.map(async id => await User.findById(id));
-//     this.guides = await Promise.all(guidesPromises);
-//     next();
-// })
-
-
-
-
-
-
-
-// example of documention creation manualy
-// const newDoc = Tour({
-//     name: "The SSS",
-//     price: 997,
-//     rating: 4.5
-// });
-
-// newDoc.save()
-//         .then(doc => {console.log(doc)})
-//         .catch(err => {console.log(err.message)});
