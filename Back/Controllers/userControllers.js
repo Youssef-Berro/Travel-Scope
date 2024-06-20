@@ -28,34 +28,10 @@ const deleteMe = async (req, res, next) => {
 }
 
 
-// not an endpoint
 const getMe = (req, res, next) => {
     req.params.id = req.user.id;
     next(); 
 }
-
-
-
-// const activateUser = async (req, res, next) => {
-//     try{
-//         const user = await User.findByIdAndDelete(req.user.id, {active: true, de_activatedAt: undefined}, {
-//             new : true,
-//             runValidators: true
-//         })
-
-//         res.status(200).json({
-//             status: 'success',
-//             data : {
-//                 name : user.name,
-//                 email: user.email,
-//                 role : user.role
-//             }
-//         })
-//     } catch(err) {
-//         next(new ErrorHandling('activation failed', 400));
-//     }
-// }
-
 
 const becomeGuid = async (req, res, next) => {
     try {
