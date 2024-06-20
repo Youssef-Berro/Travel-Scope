@@ -15,24 +15,17 @@ const topTours = (req, res, next) => {
 }
 
 
-
-// 401 : unauthorized , 403 : malformed token
 const checkTokenValidity = async (req, res, next) => {
     try{
         let token = req.headers.authorization;
 
-        // check if token are sended
         if(!token)  throw new ErrorHandling('you are not log in', 401);
 
-        // check if it's Bearer token
         if(!token.startsWith('Bearer'))   throw new ErrorHandling('token must start with Bearer ', 403); 
         token = token.split(' ')[1];
 
-        // check if token exist or not
         const decode = jwt.verify(token, process.env.SECRET_JWT);
 
-        // jwt.verify verify 100% if the user exist or not but we do the following part because when
-        // a user have been deleted, jwt.verify don't know, so we must recheck 
         const decodedUser = await User.findById(decode.id);
         if(!decodedUser)   throw new ErrorHandling('the user belonging to this token does no longer exist', 401)
 
