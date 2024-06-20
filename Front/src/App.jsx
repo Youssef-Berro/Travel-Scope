@@ -14,8 +14,6 @@ import ForgetPassword from './UserComponents/ForgetPassword'
 import ResetPassword from './UserComponents/ResetPassword'
 import ScrollTopBtn from './commonComponents/ScrollTopBtn'
 
-// fix reset passsword url (thomas)
-// login and sign up UI
 
 const ToursContext = createContext();
 const UserContext = createContext();
