@@ -1,0 +1,345 @@
+@import url(./Common.css);
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 30rem;
+    background-color: rgba(208, 208, 208, 0.656);
+    width: 60%;
+    font-size: 1.2rem;
+    padding-left: 4%;
+}
+
+
+.user-info .text {
+    color: rgb(36, 36, 36);
+    text-transform: uppercase;
+}
+
+.user-info .value {
+    color: rgb(89, 88, 88);
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+}
+.settings .title {
+    margin: 0;
+    text-transform: uppercase;
+    color: rgb(73, 71, 71);
+    font-weight: bold;
+}
+
+.setting-options {
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    justify-content: space-evenly;
+    align-items: start;
+}
+
+.setting-options a {
+    text-decoration: none;
+}
+
+.url{
+    color: blue;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.url:hover {
+    text-decoration: underline blue;
+}
+
+.delete{
+    width: fit-content;
+    height: fit-content;
+    border: none;
+    color: red;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+}
+
+.delete:hover {
+    text-decoration: underline red;
+}
+
+
+.log-out{
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+}
+
+.Become-guid-form {
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    width: 90%;
+    margin: 20px auto;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.Become-guid-form label {
+    background-color: rgba(137, 133, 133, 0.492);
+    font-size: 2rem;
+    padding: 10px;
+    margin: 10px auto;
+    width: fit-content;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.Become-guid-form select {
+    width: 10rem;
+    align-self: center;
+}
+
+.Become-guid-form .submit-btn {
+    width: fit-content;
+    padding: 10px 20px;
+    margin: auto;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Become-guid-form .submit-btn:hover {
+    background-color: var(--on-hover);
+}
+
+.name-cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-cont .name {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.name-cont .edit-name {
+    display: flex;
+    gap: 15px;
+}
+
+.name-cont .name input {
+    width: 8rem;
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+
+.name-cont .name button {
+    cursor: pointer;
+    padding: 6px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.name-cont .name .cancel {
+    background-color: red;
+}
+
+.name-cont .name .confirm {
+    background-color: green;
+}
+
+.name-cont .name .pencil {
+    background-color: var(--main-color);
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 2px;
+    padding: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .Become-guid-form label {
+        font-size: 1.6rem;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .user-info .text {
+        font-size: 1rem;
+    }
+    
+    .user-info .value {
+        font-size: 1rem;
+    }
+
+    .name-cont .edit-name {
+        gap: 4px
+    }
+
+    .name-cont .name {
+        gap: 2px;
+    }
+
+    .name-cont .name input {
+        width: 6rem;
+        padding: 4px;
+    }
+    
+    .name-cont .name button {
+        padding: 5px;
+        font-size: .8rem;
+    }
+}
+
+
+@media (max-width: 660px) {
+    .user-info .text,
+    .user-info .value {
+        font-size: .9rem;
+    }
+
+    .edit-name {
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        left: 25%;
+    }
+
+    .name-cont {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    .name-cont .name {
+        gap: 6px;
+        width: 12rem;
+    }
+
+    .name-cont .name input {
+        width: 8rem;
+    }
+    
+    .name-cont .name button {
+        width: 5rem;
+        padding: 2px;
+        font-size: .7rem;
+    }
+
+    .name-cont .name {
+        display: block;
+    }
+
+    .name-cont .name div {
+        width: 40%;
+        margin: auto;
+    }
+
+    .name-cont .name .pencil {
+        width: 3rem;
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+
+    .setting-options {
+        height: 60%;
+    }
+
+    .setting-options a,
+    .setting-options button{
+        font-size: .7rem;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .user-info .text,
+    .user-info .value {
+        font-size: .8rem;
+    }
+
+    .name-cont .name .pencil {
+        width: 2.6rem;
+        font-size: .8rem;
+    }
+
+    .name-cont {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+}
+
+
+@media (max-width: 470px)
+{
+    .container {
+        width: 100%;
+        display: block
+    }
+
+    .user-info,
+    .settings{
+        width: 96%;
+    }
+
+    .settings {
+        height: 20rem;
+    }
+
+    .user-info .name-cont span,
+    .user-info .role span {
+        font-size: 1.2rem;
+    }
+
+    .settings .title {
+        font-size: 2rem;
+    }
+
+
+    .setting-options a,
+    .setting-options button{
+        font-size: 1rem;
+    }
+}
+
+input.change-photo {
+    display: none;
+}
+
+.change-photo {
+    cursor: pointer;
+}
+
+
+input[type="file"]:not([disabled]) + label.change-photo {
+    text-decoration: none;
+}
+
+
+@media (max-width: 420px)
+{
+    .user-info .name-cont span,
+    .user-info .role span {
+        font-size: .9rem;
+    }
+}

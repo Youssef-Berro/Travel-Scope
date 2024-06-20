@@ -1,0 +1,234 @@
+@import url(./Common.css);
+
+.form {
+    height: 30rem;
+    width: 40%;
+    background-color: #c8c5c5;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form-title {
+    font-size: 28px;
+    color: var(--main-color);
+    font-weight: 600;
+    word-spacing: 4px;
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+
+.title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+.name-field{
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-field div {
+    width: 45%;
+}
+
+
+.signin {
+    text-align: center;
+}
+
+.signin a,
+.forget-password {
+    color: royalblue;
+}
+
+.signin a:hover,
+.forget-password:hover {
+    text-decoration: underline;
+}
+
+
+.form div {
+    position: relative;
+}
+
+.form .input-cont .input,
+.form .name-field .input{
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    width: 100%;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+}
+
+
+.form div .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form div .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.form div .input:focus + span,.form div .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.form div .input:valid + span {
+    color: green;
+}
+
+.submit-parent{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    letter-spacing: 1px;
+}
+
+.submit {
+    border: none;
+    background-color: var(--main-color);
+    padding: 10px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 16px;
+    transform: .5s ease;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: var(--on-hover);
+}
+
+.not-found,
+.invalid-data{
+    display: grid;
+    place-items: center;
+    background-color: red;
+    padding: 10px;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 2rem;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.done {
+    width: fit-content;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: rgb(32, 211, 32);
+    font-size: 1.4rem;
+    border-radius: 20px;
+}
+
+
+@media (max-width: 800px) {
+    .form {
+        height: 25rem;
+    }
+
+    .name-field{
+        flex-wrap: wrap;
+        align-content: space-between;
+        height: 7rem;
+    }
+    .name-field div {
+        width: 100%;
+    }
+
+    .form input {
+        height: .6rem;
+    }
+
+    .submit-parent .submit {
+        height: 2.2rem;
+    }
+}
+
+
+@media (max-width: 580px) {
+    .form {
+        height: 22rem;
+    }
+
+    .name-field{
+        height: 5.7rem;
+    }
+
+    .form input {
+        height: .5rem;
+    }
+
+    .input-cont .input {
+        font-size: .78rem;
+    }
+
+    .submit-parent .submit {
+        height: 2rem;
+    }
+
+    .form-title {
+        font-size: 24px;
+    }
+
+    .signin {
+        font-size: .8rem;
+    }
+}
+
+@media (max-width: 470px) {
+    .form {
+        width: 16rem;
+        height: 18rem;
+        padding: 32px;
+    }
+
+    .input-cont,
+    .name-field{
+        font-size: .8rem;
+        width: 80%;
+    }
+
+    .name-field {
+        height: 4.7rem;
+    }
+
+    .input-cont .input,
+    .name-field .input{
+        /* margin-left: 10px; */
+        height: .2rem;
+    }
+
+    .submit-parent .submit {
+        height: 1.7rem;
+        font-size: .7rem;
+        padding: 5px;
+    }
+
+    .forget-password {
+        font-size: .8rem;
+    }
+
+    .signin {
+        font-size: .7rem;
+    }
+}

@@ -1,0 +1,509 @@
+@import url(./Common.css);
+
+.tour-head{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tour-head img{
+    height: 600px;
+    width: 100%; 
+    background-size: cover;
+}
+
+.tour-head .title{
+    color: rgba(42, 42, 42, 0.833);
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.475);
+    font-size: 5rem;
+    left: 4rem;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    width: fit-content;
+}
+
+
+.tour-detail{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    height: 45rem;
+    justify-content: space-evenly;
+    position: relative;
+    font-family: 'Kinfolk', sans-serif;
+}
+
+.tour-detail::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background-color: rgba(222, 222, 222, 0.596);
+    z-index: -1;
+}
+
+.tour-detail > div{
+    padding: 10px;
+    height: 100%;
+    width: 35%;
+}
+
+.detail-cont1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.detail-cont1 > div{
+    height: 40%;
+}
+
+.quick-facts,
+.guides{
+    display: grid;
+}
+
+
+.desc-title{
+    display: flex;
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.desc-title + div{
+    color: rgb(74, 73, 73);
+    letter-spacing: 1px;
+}
+
+.fields{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: start;
+}
+
+.detail-cont2 div{
+    overflow: hidden; /* doesn't work */
+}
+
+.field .text{
+    text-transform: uppercase;
+    font-size: .9rem;
+    color: rgb(24, 24, 24);
+}
+
+
+.guide {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    gap: 20px;
+}
+
+.guide .guide-image {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 1px;
+}
+
+.tour-reviews {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.review-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: calc(30% - 20px); 
+    box-shadow: 0px 0px 12px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.tour-reviews-title {
+    margin: 40px 0 ;
+    height: 5rem;
+    background-color: rgb(174, 174, 175);
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+    display: grid;
+    place-items: center;
+    background-color: rgb(222, 222, 222);
+    color: var(--main-color);
+}
+
+
+.review-header {
+    display: flex;
+    align-items: center;
+}
+
+.review-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.review-user-name {
+    font-weight: bold;
+}
+
+.review-body {
+    margin-top: 10px;
+}
+
+.review-rating {
+    display: flex;
+    align-items: center;
+}
+
+.review-rating .text {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.review-description {
+    display: flex;
+}
+
+.review-description .text {
+    font-weight: bold;
+    width: fit-content;
+    margin-right: 5px;
+}
+
+.tour-images-cont {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background-color: rgb(222, 222, 222, 0.596);
+}
+
+.tour-images {
+    position: relative;
+    display: flex;
+    backface-visibility: hidden;
+    transform: skew(-16deg, 0);
+}
+
+.tour-image img {
+    width: 100%;
+    background-size: cover;
+}
+
+#map {
+    height: 30rem;
+    cursor: grab;
+    overflow: hidden;
+    position: relative;
+}
+
+.marker {
+    background-image: url('../../img/pin.png');
+    background-size: cover;
+    width: 33px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    width: 15rem;
+    /* height: 1rem; */
+    background-color: #ffffff5e;
+}
+
+.mapboxgl-popup-content {
+    height: 3rem;
+    font-size: .8rem;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    padding: 5px !important;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.357) !important;
+}
+
+.mapboxgl-popup-close-button {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 12px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.zoom-buttons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.zoom-buttons button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 1024px) {
+    .tour-head .title {
+        font-size: 4rem;
+    }
+
+    .tour-head img {
+        height: 500px;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .tour-head .title{
+        font-size: 3rem;
+        top: 2rem;
+        left: 0;
+        padding: 10px;
+    }
+
+    .tour-head img {
+        height: 400px;
+    }
+    
+    .detail-cont1 > div{
+        height: 40%;
+    }
+    
+    .desc-title{
+        font-size: 1.4rem;
+    }
+    
+    .field .text{
+        font-size: .9rem;
+    }
+
+    .field .value{
+        font-size: .8rem;
+    }
+    
+    .guide .guide-image {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .guide .guide-name {
+        font-size: .7rem;
+    }
+
+    .detail-cont2 div{
+        font-size: .8rem;
+    }
+
+    .tour-reviews {
+        display: block;
+    }
+    
+    .review-card {
+        width: 80%;
+        height: 9rem;
+        margin: 30px auto;
+    }
+}
+
+
+@media (max-width: 660px) {
+    .tour-head .title{
+        font-size: 1.7rem;
+    }
+
+    .tour-head img {
+        height: 300px;
+    }
+    
+    .desc-title{
+        font-size: 1rem;
+    }
+    
+    .field .text{
+        font-size: .7rem;
+    }
+
+    .field .value{
+        font-size: .6rem;
+    }
+
+    .tour-reviews-title {
+        font-size: 1.8rem;
+    }
+
+    .tour-reviews {
+        display: flex;
+    }
+    
+    .review-card {
+        width: 40%;
+        height: 14rem;
+    }
+
+    .review-body .review-description .value {
+        font-size: .9rem;
+    }
+}
+
+
+@media (max-width: 540px) {
+    .review-card {
+        width: 80%;
+        height: 11rem;
+    }
+
+    .review-body .review-description .value {
+        font-size: .9rem;
+        letter-spacing: .7px;
+    }
+}
+
+@media (max-width: 500px)
+{
+    .tour-detail {
+        height: 35rem;
+    }
+
+    .tour-head .title{
+        font-size: 1.4rem;
+    }
+
+    .tour-head img {
+        height: 250px;
+    }
+
+    .detail-cont2 div{
+        font-size: .6rem;
+    }
+
+    .desc-title{
+        font-size: .85rem;
+        height: 3rem;
+    }
+
+    .guide .guide-image {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .guide .guide-name {
+        font-size: .6rem;
+    }
+
+    .field .text{
+        font-size: .58rem;
+        letter-spacing: .5px;
+    }
+
+    .field .value{
+        font-size: .55rem;
+        letter-spacing: .1px;
+    }
+
+    .tour-reviews-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 430px)
+{
+    .tour-detail {
+        height: 30rem;
+    }
+
+    .detail-cont2 div{
+        font-size: .5rem;
+    }
+
+    .tour-detail .desc-title{
+        font-size: .7rem;
+    }
+
+    .guide .guide-image {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    .guide .guide-name {
+        font-size: .55rem;
+    }
+
+    .field .text{
+        font-size: .5rem;
+        letter-spacing: 1px;
+    }
+
+    .field .value{
+        font-size: .55rem;
+        letter-spacing: .1px;
+    }
+}
+
+@media (max-width: 390px) {
+    .review-card {
+        width: 90%;
+    }
+    .tour-reviews-title {
+        font-size: 1.4rem;
+    }
+    .detail-cont2 div{
+        font-size: .42rem;
+    }
+
+    .tour-detail .desc-title{
+        font-size: .6rem;
+    }
+
+    .guide .guide-image {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .guide .guide-name {
+        font-size: .5rem;
+    }
+
+    .field .text{
+        font-size: .42rem;
+        letter-spacing: 1px;
+    }
+
+    .field .value{
+        font-size: .45rem;
+        letter-spacing: .1px;
+    }
+}
+
+
+@media (max-width: 370px) {
+    .review-card .review-description .value {
+        font-size: .8rem;
+    }
+
+    .tour-reviews-title {
+        font-size: 1.2rem;
+    }
+}

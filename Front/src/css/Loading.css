@@ -1,0 +1,29 @@
+@import url(./Common.css);
+
+.loading{
+    border: 10px solid black;
+    width: 200px;
+    height: 200px;
+    margin: 70px auto;
+    border-radius: 50%;
+    border-left-color: transparent;
+    animation: spinner .6s infinite alternate-reverse linear;
+}
+
+@keyframes spinner {
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}
+
+
+
+@media (max-width: 560px) {
+    .loading {
+        width: 100px;
+        height: 100px;
+    }
+}

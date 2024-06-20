@@ -1,0 +1,222 @@
+:root {
+    --main-color: rgb(11, 128, 163);
+    --on-hover: rgb(56, 90, 194);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.btns button, 
+.ok-btn {
+    width: 5rem;
+    height: 2.2rem;
+    display: grid;
+    color: #fff;
+    place-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+
+.btns .yes-btn {
+    background-color: rgb(245, 31, 31);
+}
+
+.btns .yes-btn:hover {
+    background-color: rgb(114, 10, 10);
+}
+
+
+.btns .no-btn,
+.ok-btn {
+    background-color: green;
+}
+
+.btns .no-btn:hover,
+.ok-btn:hover {
+    background-color: rgb(3, 73, 3);
+}
+
+
+.ok-btn {
+    width: 5rem;
+    height: 2rem;
+    margin: auto;
+}
+
+.loader {
+    position: fixed;
+    width: 80px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(230, 230, 230);
+    padding: 30px 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    z-index: 10;
+}
+
+.loader-text {
+    color: black;
+    /* animation: text_713 1.5s linear  infinite; */
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    align-self: flex-start;
+    justify-self: start;
+    top: 0;
+}
+
+.load {
+    background-color: var(--on-hover);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 16px;
+    width: 16px;
+    transform: translateX(64px);
+    animation: loading_713 1.5s linear  infinite;
+}
+
+.load::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    border-radius: inherit;
+    animation: loading2_713 1.5s linear  infinite;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 43, 43, 0.539);
+    z-index: 9;
+}
+
+@keyframes text_713 {
+    0% {
+        letter-spacing: 1px;
+        transform: translateX(0px);
+    }
+
+    40% {
+        letter-spacing: 2px;
+        transform: translateX(26px);
+    }
+
+    80% {
+        letter-spacing: 1px;
+        transform: translateX(32px);
+    }
+
+    90% {
+        letter-spacing: 2px;
+        transform: translateX(0px);
+    }
+
+    100% {
+        letter-spacing: 1px;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes loading_713 {
+    0% {
+        width: 16px;
+        transform: translateX(0px);
+    }
+
+    40% {
+        width: 100%;
+        transform: translateX(0px);
+    }
+
+    80% {
+        width: 16px;
+        transform: translateX(64px);
+    }
+
+    90% {
+        width: 100%;
+        transform: translateX(0px);
+    }
+
+    100% {
+        width: 16px;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes loading2_713 {
+    0% {
+        transform: translateX(0px);
+        width: 16px;
+    }
+
+    40% {
+        transform: translateX(0%);
+        width: 80%;
+    }
+
+    80% {
+        width: 100%;
+        transform: translateX(0px);
+    }
+
+    90% {
+        width: 80%;
+        transform: translateX(15px);
+    }
+
+    100% {
+        transform: translateX(0px);
+        width: 16px;
+    }
+}
+
+
+@media (max-width: 660px) {
+    .btns button, 
+    .ok-btn {
+        width: 4.5rem;
+        height: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .btns button, 
+    .ok-btn {
+        width: 4rem;
+        height: 1.5rem;
+        font-size: .8rem;
+    }
+}
+
+.custom-confirm-button {
+    background-color: rgb(177, 66, 66) !important; 
+    color: white; 
+    border: none; 
+    box-shadow: 0 0 3px red !important;
+}
+
+.custom-ok-button {
+    background-color: rgb(177, 66, 66) !important; 
+    color: white; 
+    border: none; 
+    box-shadow: 0 0 3px red !important;
+}

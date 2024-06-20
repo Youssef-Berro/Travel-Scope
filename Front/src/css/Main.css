@@ -1,0 +1,156 @@
+@import url(./Common.css);
+
+.busiest-month-title,
+.stats-title {
+    font-size: 4rem;
+    color: var(--main-color);
+    font-weight: 600;
+    word-spacing: 4px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    font-family: 'Josefin Sans Std', sans-serif;
+    text-transform: capitalize;
+    position: relative;
+}
+
+.years-container,
+.stats-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.years-container .year,
+.stats-container .stat-card{
+    background-color: #ddd;
+    width: 25%;
+    border-radius: 20px;
+    height: 12rem;
+    padding: 2%;
+}
+
+.year .data,
+.stat-card .data{
+    display: flex;
+    flex-wrap: wrap;
+    height: 80%;
+}
+
+.years-container .year .title,
+.stats-container .stat-card .title {
+    color: var(--main-color);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.year .field,
+.month-tours {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 6%;
+}
+
+.stat-card .data > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%; 
+    margin-left: 6%;
+}
+
+.year .field .text,
+.month-tours .text,
+.stat-card .data .text {
+    color: var(--main-color);
+}
+
+.data .field .value,
+.month-tours .value{
+    font-size: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .years-container,
+    .stats-container {
+        display: block;
+    }
+
+    .years-container .year,
+    .stats-container .stat-card{
+        width: 70%;
+        margin: 30px auto;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .busiest-month-title,
+    .stats-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 660px) {
+    .busiest-month-title,
+    .stats-title {
+        font-size: 2.1rem;
+    }
+
+    .data .field .value,
+    .month-tours .value,
+    .stats-container .data,
+    .year .data{
+        font-size: .8rem;
+    }
+}
+
+
+@media (max-width: 460px) {
+    .busiest-month-title,
+    .stats-title {
+        font-size: 1.7rem;
+    }
+
+    .data .field .value,
+    .month-tours .value,
+    .stats-container .data,
+    .year .data{
+        font-size: .7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .busiest-month-title,
+    .stats-title {
+        font-size: 1.5rem;
+    }
+
+
+    .stat-card .data .text {
+        font-size: .8rem;
+    }
+
+    .data .field .value,
+    .month-tours .value,
+    .stats-container .data,
+    .year .data{
+        font-size: .7rem;
+    }
+
+    .stats-container .data .text,
+    .stats-container .data .value{
+        font-size: .7rem;
+    }
+}
+
+
+@media (max-width: 350px) {
+    .stats-container .data .text,
+    .stats-container .data .value{
+        font-size: .6rem;
+    }
+}

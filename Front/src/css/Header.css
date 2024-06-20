@@ -1,0 +1,308 @@
+@import url(./Common.css);
+
+header {
+    background-color: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.5rem;
+    padding: .2rem 1rem;
+}
+
+.title {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Josefin Sans Std', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.header-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content; 
+    height: fit-content;
+    padding-left: 12rem;
+}
+
+.header-logo img{
+    width: 3.5rem;
+    height: 3.5rem;
+    filter: grayscale(20%)
+}
+
+
+.header-right-section{
+    width: 20rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.drop-show {
+    display: none;
+}
+
+.header-right-section a {
+    color: #fff;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-family: 'Josefin Sans Std', sans-serif;
+    text-decoration: none;
+}
+
+.header-right-section > .log-in,
+.header-right-section > .sign-up{
+    width: 25%;
+    font-size: .9rem;
+}
+
+
+.header-right-section > .log-in {
+    border: none;
+    transition: 0.3s all;
+    display: grid;
+    place-content: center;
+}
+
+.header-right-section > .log-in:hover {
+    text-shadow: 0 6px 8px #000;
+    transform: translateY(-4px);
+}
+
+.header-right-section > .sign-up {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    border: 1.5px solid #fff;
+    background-size: 400%;
+    color: #fff;
+    transition: .4s all;
+    display: grid;
+    place-content: center;
+}
+
+
+.header-right-section > .sign-up:hover{
+    background-color: #fff;
+    color: #444;
+    border: 2px solid #000;
+}
+
+.user{
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    width: 80%;
+    max-width: 100%;
+}
+
+.user-name {
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    word-spacing: 5px;
+    color: rgb(228, 225, 225);
+    font-family: 'Josefin Sans Std', sans-serif;
+}
+
+.user-photo{
+    display: grid;
+    place-items: center;
+}
+
+
+.user-photo img{
+    border-radius: 50%;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-width: 3px;
+}
+
+
+@media (max-width: 1200px) {
+    
+}
+
+@media (max-width: 1024px) {
+    
+}
+
+@media (max-width: 900px) {
+    .title {
+        font-size: .9rem;
+    }
+
+    .header-logo{
+        padding-left: 8rem;
+    }
+    
+    .header-logo img{
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+    .user-name {
+        font-size: 1.2rem;
+    }
+    
+    .header-right-section{
+        width: 15rem;
+    }
+    
+    .header-right-section > .log-in,
+    .header-right-section > .sign-up{
+        font-size: .7rem;
+    }
+
+    .header-right-section > .sign-up {
+        height: 2.4rem;
+        padding: 0 1.3rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .user{
+        width: 80%;
+        max-width: 100%;
+    }
+    
+    .user-name {
+        font-size: 1.1rem;
+    }
+
+    .user-photo img{
+        border-width: 2px;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .header-logo img{
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+    .header-logo{
+        padding-left: 6rem;
+    }
+
+    .header-right-section{
+        justify-content: space-evenly;
+    }
+}
+
+
+@media (max-width: 660px) {
+    .header-right-section > .log-in,
+    .header-right-section > .sign-up {
+        display: none;
+    }
+
+    .header-right-section {
+        width: 11rem;
+        justify-content: end;
+        height: 100%;
+    }
+
+    .header-logo{
+        padding-left: 4rem;
+    }
+
+    .drop-show {
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .drop-show::before {
+        content: ' ';
+        position: absolute;
+        top: 25%;
+        right: 1rem;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+    }
+
+    .drop-show::after {
+        content: ' ';
+        position: absolute;
+        bottom: 25%;
+        right: 1rem;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+    }
+
+    .drop-show .btns {
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+        width: 220%;
+        bottom: -8.7rem;
+        left: -1.9rem;
+        align-content: space-between;
+        height: 3rem;
+        background-color: grey;
+        padding: 2rem 0;
+        z-index: 1;
+        border-radius: 0 0 5px 5px;
+        display: none;
+    }
+
+    .drop-show .btns a {
+        font-size: .8rem;
+        width: 4rem;
+        margin: auto;
+    }
+
+    .header-right-section:hover .btns {
+        display: flex;
+    }
+
+    .header-right-section .btns:hover {
+        display: flex;
+    }
+
+    .header-right-section .btns .a:hover {
+        color: grey;
+        background-color: red;
+    }
+
+    .user-name {
+        display: none;
+    }
+
+    .user-photo img{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+
+
+@media (max-width: 540px) {
+    header .title {
+        font-size: .75rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .header-logo{
+        padding-left: 2.5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .header-logo{
+        padding-left: 1.7rem;
+    }
+}
